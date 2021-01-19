@@ -1,15 +1,14 @@
 import { useState } from "react";
-import DelList from "./DelList";
-import DelForm from "./DelForm";
+import DeliveryList from "./DeliveryList";
+import EditDelivery from "./EditDelivery";
 import DelData from '../Data/tasks.json';
 
 const Home = () => {
-    const [dels, setDel] = useState(DelData)
+    const [deliveries, setDeliveries] = useState(DelData)
     const [selected, setSelected] = useState(null)
 
     function deleteDelivery(id){
-        const newDels = dels.filter(del => del.id !== id);
-        setDel(newDels);
+        setDeliveries(deliveries.filter(del => del.id !== id));
     }
 
     function saveDelivery(delivery){
@@ -23,35 +22,34 @@ const Home = () => {
     }
 
     function addDelivery(delivery){
-        const ind = nextId(dels);
-        delivery.id = ind
-        console.log("Add")
-        let tmpList= dels;
-        tmpList.push(delivery)
-        setDel([...tmpList])
+        delivery.id = nextId(deliveries);
+        deliveries.push(delivery)
+        setDeliveries([...deliveries])
         console.log(delivery);
     }
 
     function updateDelivery (delivery){
         console.log("Update" , delivery)
-        setDel([...dels]);
+        let d = deliveries.find(d => d.id === delivery.id);
+        deliveries[deliveries.indexOf(d)] = delivery;
+        setDeliveries([...deliveries]);
     }
 
     function selectDelivery (id){
-        const delivery = dels.find(del => del.id === id);
+        const delivery = deliveries.find(del => del.id === id);
         console.log(delivery)
         setSelected(delivery);
     }
 
-    function  nextId(dels) {
-        let max = Math.max(...dels.map((curr) => curr.id));
+    function  nextId(deliveries) {
+        let max = Math.max(...deliveries.map((curr) => curr.id));
         return ++max;
     }
 
     return (
         <div className="home">
-            <DelList dels={dels} onDelete={deleteDelivery} onSelect={selectDelivery} />
-            <DelForm delivery={selected} onSave={saveDelivery} />
+            <DeliveryList deliveries={deliveries} onDelete={deleteDelivery} onSelect={selectDelivery} />
+            <EditDelivery delivery={selected} onSave={saveDelivery} />
         </div>
     );
 }

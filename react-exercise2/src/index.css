@@ -1,0 +1,6 @@
+.home {
+    display:flex;
+    min-width: 600px;
+    min-height: 600px;
+    background: url("Images/Scene.svg") no-repeat;
+}
