@@ -1,9 +1,0 @@
-#scene{
-    min-width:1285px ;
-    min-height: 800px ;
-    background-image: url('/src/Images/Scene.svg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-
-}

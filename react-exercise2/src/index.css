@@ -1,6 +1,24 @@
+#root{
+    margin: 0 auto;
+    font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    position: relative;
+}
+
 .home {
+    position: absolute;
+    right: 0px;
+    up: 0px;
     display:flex;
-    min-width: 600px;
+    justify-content: center  ;
+    min-width: 80%;
     min-height: 600px;
-    background: url("Images/Scene.svg") no-repeat;
+    background-image: url("Images/Scene.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    border-radius: 0px 0px 0px 40px;
+}
+.truck{
+    position: absolute;
+    top: 500px;
 }
