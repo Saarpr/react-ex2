@@ -10,15 +10,18 @@
     right: 0px;
     up: 0px;
     display:flex;
-    justify-content: center  ;
+    align-items: flex-start;
+    justify-content: center;
     min-width: 80%;
-    min-height: 600px;
-    background-image: url("Images/Scene.jpg");
+    min-height: 700px;
+    background-image: url("Images/Scene.svg");
+    background-position: center;
+    background-size: contain;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    border-radius: 0px 0px 0px 40px;
 }
+
 .truck{
     position: absolute;
-    top: 500px;
+    top: 565px;
+    left: 10%;
 }

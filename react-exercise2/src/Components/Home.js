@@ -48,8 +48,8 @@ const Home = () => {
 
     return (
         <div className="home">
-            <DeliveryList deliveries={deliveries} onDelete={deleteDelivery} onSelect={selectDelivery} />
-            <EditDelivery delivery={selected} onSave={saveDelivery} />
+            <DeliveryList className="DeliveryList" deliveries={deliveries} onDelete={deleteDelivery} onSelect={selectDelivery} />
+            <EditDelivery className="EditDelivery" delivery={selected} onSave={saveDelivery} />
         </div>
     );
 }
