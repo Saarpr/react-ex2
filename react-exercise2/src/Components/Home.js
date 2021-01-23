@@ -43,7 +43,10 @@ const Home = () => {
 
     function  nextId(deliveries) {
         let max = Math.max(...deliveries.map((curr) => curr.id));
-        return ++max;
+        if (max>0)
+            return ++max;
+        else
+            return 1;
     }
 
     return (

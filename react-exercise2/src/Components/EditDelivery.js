@@ -1,7 +1,6 @@
 import React, {Component, useState, useEffect} from 'react';
 import { TextField , Button , Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import '../Style/EditDelivery.css';
 
 const useStyles = makeStyles({
     root: {
@@ -24,7 +23,6 @@ const useStyles = makeStyles({
     },
 
 });
-
 
 const EditDelivery = ({ delivery , onSave }) => {
     const classes = useStyles();
@@ -63,56 +61,3 @@ const EditDelivery = ({ delivery , onSave }) => {
     );
 }
 export default EditDelivery;
-
-
-//
-// import React, {Component, useState, useEffect} from 'react';
-// import { makeStyles } from '@material-ui/core/styles';
-// import { TextField,FormControl,InputLabel } from '@material-ui/core';
-// import '../Style/EditDelivery.css';
-//
-// const useStyles = makeStyles((theme) => ({
-//     root: {
-//         '& > *': {
-//             margin: theme.spacing(1),
-//             width: '25ch',
-//         },
-//     },
-// }));
-//
-//
-// const EditDelivery = ({ delivery , onSave }) => {
-//     const classes = useStyles();
-//     const [tmpDelivery, setTmpDelivery ] = useState({...delivery});
-//
-//     useEffect(() => {
-//         setTmpDelivery({...delivery});
-//     }, [delivery]);
-//
-//     function handleNameChanged(event) {
-//         setTmpDelivery({...tmpDelivery,name:event.target.value})
-//     }
-//     function handleCityChanged(event) {
-//         setTmpDelivery({...tmpDelivery,city:event.target.value})
-//     }
-//     function handleDateChanged(event) {
-//         setTmpDelivery({...tmpDelivery,date:event.target.value})
-//     }
-//     function onClick(){
-//         onSave(tmpDelivery);
-//     }
-//
-//     return (
-//         <div className="del-form">
-//             <FormControl id="form-ctrl">
-//                 <TextField size="small" className="outlined-secondary" variant="outlined" color="secondary"  value={tmpDelivery.name} onChange={handleNameChanged}/>
-//                 <TextField size="small" className="outlined-secondary" variant="outlined" color="secondary" value={tmpDelivery.city} onChange={handleCityChanged}/>
-//                 <TextField size="small" className="outlined-secondary" variant="outlined" color="secondary" value={tmpDelivery.date} onChange={handleDateChanged}/>
-//                 <button onClick={onClick}>{tmpDelivery.id?"Save":"Add"}</button>
-//             </FormControl>
-//
-//         </div>
-//     );
-// }
-// export default EditDelivery;
-//
